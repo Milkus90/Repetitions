@@ -22,11 +22,10 @@ int findMaxRepetitions (std::string word){
     int maxRepeat = 1;
     int repeatCount = 1;
     for (std::string::iterator it = word.begin() ; it != (--word.end()) ; it++){
-        if (*it == *(++it)){   // have to find the solution without incrementation and decrementation od iterator
+        if (*it == *(it+1)){
             repeatCount++;
             if (repeatCount > maxRepeat) maxRepeat = repeatCount;
         } else repeatCount = 1;
-        it--;
     }
     return maxRepeat;
 }
